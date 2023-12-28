@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply
+  m-40
+  bg-neutral-300
+}
+
+.btn {
+  @apply 
+  bg-amber-600 
+  py-2 px-3 my-2 
+  inline-block 
+  text-white 
+  border-2 
+  border-amber-600
+}
