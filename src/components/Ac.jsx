@@ -1,15 +1,35 @@
-import Card from "./Card"
-export default function Ac() {
-  return (
-    <div>
-      <h1>sx</h1>
-      <a href='/'>XXX</a>
-      <Card rounded={true} flat={false}>
-        <h2>a</h2>
-        <p>Hello @NetNinja, please can you do a tutorial on ionic vue and building android with capacitor?</p>
-        <button class='btn'>Click Me</button>
-      </Card>
-    </div>
+import { Show, createResource } from "solid-js"
 
+async function fetchUsers() {
+  const res = await fetch('https://api.github.com/users')
+  return res.json()
+}
+
+
+export default function Ac() {
+
+  const [users] = createResource(fetchUsers)
+
+  return (
+    <Show when={users()} fallback='loading'>
+      <div>
+        <For each={users()}>
+          {function (user) {
+            return (
+              <div>
+                <p>{user.login}</p>
+                <img src={user.avatar_url}></img>
+                <br />
+                <br />
+                <br />
+              </div>
+            )
+          }
+          }
+
+        </For>
+
+      </div>
+    </Show>
   )
 }

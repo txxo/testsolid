@@ -1,6 +1,5 @@
 import { createSignal } from "solid-js"
 import Card from "./Card"
-import { A } from "@solidjs/router"
 
 export default function Home() {
   const [dktheme, setDktheme] = createSignal(false)

@@ -1,13 +1,17 @@
 import Home from './components/Home'
 import Ac from './components/Ac'
-import { Router, Route, A } from '@solidjs/router'
+import Nav from './components/Nav'
+import { Router, Route } from '@solidjs/router'
 
 function App() {
 
 
 
+
+
   return (
     <div>
+      <Nav />
 
       <Router>
         <Route path={'/'} component={Home} />
